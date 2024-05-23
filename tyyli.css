@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    font-family: 'Poiret One', cursive;
+    background-color: #002E33;
+    font-size: 20px;
+  }
+  
+  header {
+    background: #002E33;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    border: 0px #075c19 solid;
+    text-shadow: rgb(255, 255, 255) 3px 0 10px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 3%;
+   
+  }
+  
+  .navi-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navi-links a:hover {
+    color: #14FDCE;
+  
+  }
+  
+  
+  
+  .navi-links li {
+    margin: 0 15px;
+  }
+  
+  .navi-links a {
+    color: #fff;
+    text-decoration: none;
+  
+  }
+  
+  .hero {
+  
+    background-color: #02171a;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding-top: 20px; 
+  }
+  
+  .lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+  }
+  
+  .line {
+    position: relative;
+    width: 8px;
+    height: 75%;
+    margin-top: 4%;
+    background: linear-gradient(-45deg, #036772, #ff3fe5, #f7c483, #6f52ee, #1e586d);
+    animation: move 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 40px 10px rgba(0, 174, 255, 0.7);
+    border-radius: 50%;
+  
+  }
+  
+  @keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+  }
+  
+  .hero-content {
+    margin-top: 5%;
+    background-color: rgba(32, 49, 53, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0; 
+    transition: opacity 0.9s ease-in-out; 
+    box-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #541dac, 0 0 40px #077c69, 0 0 50px #00e68e, 0 0 60px #00e6c7;
+    border: 1px #2eaacf solid;
+  }
+  
+  .hero-content.show {
+    opacity: 1; 
+  }
+  
+  .hero h1 {
+    font-size: 36px; 
+    margin-bottom: 10px;
+    color: #14FDCE;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #14FDCE;
+    
+  }
+  
+  .btn {
+    background-color: rgba(7, 37, 51, 0.9);
+    color: #14FDCE;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+    border: 1px #2bd8d8 solid;
+    
+  }
+  
+  .btn:hover{
+    box-shadow: 0 0 20px rgba(85, 39, 212, 0.5), 0 0 40px rgba(199, 20, 253, 0.3), 0 0 60px rgba(253, 20, 183, 0.2);
+  background-color: #14FDCE;
+  color: #002E33;
+  
+  }
+  
+  .hero-images {
+    display: flex;
+    gap: 120px;
+    padding-bottom: 20px;
+  }
+  
+  .hero-img {
+    width: 200px;
+    height: 300px;
+    border-radius: 5%;
+    opacity: 0; 
+    transition: opacity 1.0s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(197, 129, 218, 0.3), 0 0 60px rgba(235, 196, 223, 0.2); 
+    border: 1px #000000 solid;
+    background-color: #02171a;
+  
+  }
+  
+  .hero-img.show {
+    opacity: 0.8; 
+  }
+  .hero-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #541dac, 0 0 40px #077c69, 0 0 50px #00e68e, 0 0 60px #00e6c7;
+    opacity: 1;
+  }
+  
+  section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .about {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: #002E33;
+    text-align: center; 
+    padding-right: 25%;
+    padding-left: 25%;
+    color: #ece8e8;
+  }
+  
+  
+  .about.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .about::before,
+  .about::after {
+    content: ""; 
+    display: inline-block; 
+    width: 50%; 
+    height: 1px; 
+    background-color: #14FDCE; 
+    
+  }
+  
+  .services {
+    background-color: #1c584c;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+  }
+  
+  .service-item {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #5efcef;
+    font-size: 20px;
+    
+  }
+  
+  .service-item.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .service-item:nth-child(2) {
+    transition-delay: 0.3s; /* Viive keskimmäisen osion näyttämisessä */
+  }
+  
+  .service-item:nth-child(3) {
+    transition-delay: 0.6s; /* Viive oikean osion näyttämisessä */
+  }
+  
+  footer {
+    background-color: #002E33;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    height: 400px;
+  }
+  
+  @keyframes fadeInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Liikuta elementtiä 50 pikseliä vasemmalle alussa */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Palauta elementti alkuperäiseen sijaintiin */
+    }
+  }
+  
+  .hero-content, .hero-images {
+    animation: fadeInFromLeft 1s ease-out forwards; /* Käytä fadeInFromLeft -avainkuvakehystä animaatioon */
+  }
+  
+  /*ScrollBar*/
+  
+  
+  ::-webkit-scrollbar {
+    width: 11px;
+    background-color: #02171a;
+   
+  }
+  
+  ::-webkit-scrollbar-track-piece {
+    border-radius: 10px;
+    background-color: #02171a;
+  }
+  
+  ::-webkit-scrollbar-thumb:vertical {
+    width: 1px;
+    border: 1px solid rgba(9, 88, 102, 10);
+    background-color: #18beb6;
+    border: #ffe6fe 1px solid;
+    border-radius: 10px;
+  }
+  
+  /*Tekstiin muotoilua, ei käytössä vielä
+  
+  .glitch {
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  .glitch::before, .glitch::after {
+    content: 'welcome';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    color: white;
+    
+  }
+  
+  .glitch::before {
+    left: -8px;
+    text-shadow: 2px 0 #00ffea;
+    animation: effect 3s infinite ease-in;
+  }
+  
+  .glitch::after {
+    left: 4px;
+    text-shadow: -2px 0 #fe3a7f;
+    animation: effect 2s infinite linear;
+  }
+  
+  @keyframes effect {
+    0% {
+        clip: rect(55px, 9999px, 56px, 0);
+    }
+    5% {
+        clip: rect(47px, 9999px, 30px, 0);
+    }
+    10% {
+        clip: rect(33px, 9999px, 36px, 0);
+    }
+    15% {
+        clip: rect(35px, 9999px, 9px, 0);
+    }
+    20% {
+        clip: rect(63px, 9999px, 59px, 0);
+    }
+    25% {
+        clip: rect(96px, 9999px, 98px, 0);
+    }
+    30% {
+        clip: rect(48px, 9999px, 77px, 0);
+    }
+    35% {
+        clip: rect(50px, 9999px, 34px, 0);
+    }
+    40% {
+        clip: rect(60px, 9999px, 72px, 0);
+    }
+    45% {
+        clip: rect(10px, 9999px, 81px, 0);
+    }
+    50% {
+        clip: rect(2px, 9999px, 60px, 0);
+    }
+    55% {
+        clip: rect(23px, 9999px, 89px, 0);
+    }
+    60% {
+        clip: rect(76px, 9999px, 91px, 0);
+    }
+    65% {
+        clip: rect(62px, 9999px, 30px, 0);
+    }
+    70% {
+        clip: rect(60px, 9999px, 72px, 0);
+    }
+    75% {
+        clip: rect(60px, 9999px, 87px, 0);
+    }
+    80% {
+        clip: rect(2px, 9999px, 14px, 0);
+    }
+    85% {
+        clip: rect(28px, 9999px, 87px, 0);
+    }
+    90% {
+        clip: rect(73px, 9999px, 50px, 0);
+    }
+    95% {
+        clip: rect(79px, 9999px, 70px, 0);
+    }
+    100% {
+        clip: rect(17px, 9999px, 79px, 0);
+    }
+  }*/
