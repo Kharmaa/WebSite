@@ -241,7 +241,9 @@ body {
     font-size: 40px;
     height: 400px;
   }
-  
+
+/*kuvien animaatio*/
+
   @keyframes fadeInFromLeft {
     0% {
       opacity: 0;
@@ -249,12 +251,12 @@ body {
     }
     100% {
       opacity: 1;
-      transform: translateX(0); /* Palauta elementti alkuperäiseen sijaintiin */
+      transform: translateX(0); /* Palauta alkuperäiseen sijaintiin */
     }
   }
   
   .hero-content, .hero-images {
-    animation: fadeInFromLeft 1s ease-out forwards; /* Käytä fadeInFromLeft -avainkuvakehystä animaatioon */
+    animation: fadeInFromLeft 1s ease-out forwards; 
   }
   
   /*ScrollBar*/
