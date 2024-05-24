@@ -1,59 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const heroContent = document.querySelector(".hero-content");
-    const heroImages = document.querySelectorAll(".hero-img");
+  const heroContent = document.querySelector(".hero-content");
+  const heroImages = document.querySelectorAll(".hero-img");
+
+  // Viive 
+  setTimeout(function() {
+    heroContent.classList.add("show");
+  }, 500); // 0.5 sekunnin viive
+
   
-    
+  let delay = 700; // viive kuvien lisäämiselle
+
+  heroImages.forEach(function(img) {
     setTimeout(function() {
-      heroContent.classList.add("show");
-    }, 500); // 0.5 sekunnin viive
-  
-    // Alusta viivästysaika kuvien lisäämiselle
-    let delay = 500; 
-  
-    
-    heroImages.forEach(function(img) {
-        setTimeout(function() {
-            img.classList.add("show");
-        }, delay);
-        
-        delay += 250; // Lisää viivästystä seuraavaan kuvaan
-    });
+      img.classList.add("show");
+    }, delay);
+
+    delay += 250;
   });
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    const aboutSection = document.querySelector(".about");
-  
-    window.addEventListener("scroll", function() {
-      // onko about-osio näkyvissä
-      if (isInViewport(aboutSection)) {
-        aboutSection.classList.add("show");
-      }
-    });
-  
-    // onko elementti näkyvissä näytöllä
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+
+  const aboutSection = document.querySelector(".about");
+  const serviceSection = document.querySelector(".services"); 
+
+  window.addEventListener("scroll", function() {
+    // Onko about-osio näkyvissä
+    if (isHalfInViewport(aboutSection)) { //puolet about-osion sisällöstä näkyvissä
+      aboutSection.classList.add("show");
+    }
+
+    // Onko osio näkyvissä ja skrollaamassa sen kohdalla
+    if (isHalfInViewport(serviceSection)) {
+      const serviceItems = document.querySelectorAll(".service-item");
+
+      serviceItems.forEach(function(item, index) {
+        setTimeout(function() {
+          item.classList.add("show");
+        }, (index + 1) * 300); 
+      });
     }
   });
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    const serviceItems = document.querySelectorAll(".service-item");
-  
-    //viivästysaika alusta
-    let delay = 2500;
-  
-    // Käy läpi My Services -osion osiot
-    serviceItems.forEach(function(item) {
-        setTimeout(function() {
-            item.classList.add("show");
-        }, delay);
-        
-        delay += 400; // Lisää viivästystä seuraavaan osioon
-    });
-  });
+
+  // Onko puolet näkyvissä näytöllä
+  function isHalfInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const elementHeight = rect.height;
+    const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    return (
+      rect.top + elementHeight / 2 <= windowHeight + scrollY && // puolivälin tarkistus
+      rect.top + elementHeight / 2 >= scrollY // yläreunan tarkistus
+    );
+  }
+});
