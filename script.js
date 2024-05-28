@@ -52,3 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
     );
   }
 });
+
+  function toggleMenu() {
+    const navLinks = document.querySelector('.navi-links');
+    navLinks.classList.toggle('nayta');
+  }
